@@ -1,0 +1,41 @@
+extract numbers algorthem;
+
+Data Defination: Mathemtical Expression
+Mathemtical Expression is String
+interp. a string consists of numbers and symbols
+rules:
+-the number can have a sign infront of it which is either - or +
+-cannot contain more than one * or / respectivly for example 2**2 is an invalid expression
+-the number can consist of more than one digit and can be decimal
+
+examples:
+validExpression = "12+65*-56/8.5"
+invalidExpression = "-23**4+340"
+
+Function Defination for numbersExtractor:
+Signature: MathmeticalExpression -> List<float>
+Purpose: parses a math. expression and returns each component individually
+
+stub:
+public List<float> extractNumbers(String exp) {
+	return new List<float>();
+}
+
+steps:
+1.create a stack
+2.create a list of floats
+3.create a temp variable of type String
+4.iterate over the string:
+	-if stack empty (if current is either a number or a sign):
+		-push the current element to the stack
+	-peek the last element
+	-if the last element is an operator or a number and the current is a number:
+		-push the current element to the stack
+	-if the last element is a number and the current element is an operator:
+		-pop all the elements from the stack
+		-concat them all in a reversed order one string
+		-convert it to a float and add it the array of floats
+		-add the current element to the array as well
+5.pop the elements until the stack is empty
+6.add the elements as the last element of the array
+7.return the array of floats

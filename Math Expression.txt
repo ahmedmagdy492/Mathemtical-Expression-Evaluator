@@ -39,3 +39,31 @@ steps:
 5.pop the elements until the stack is empty
 6.add the elements as the last element of the array
 7.return the array of floats
+
+
+Function Defination - Evaluate Expressions:
+
+Signature: List<Float> -> float
+Purpose: takes a list that represents numbers along with the operations on them
+1.create two stacks one for the numbers and one for the symbols
+2.prepare the 2 stacks with data and operations:
+-iterate over the array:
+	-if the current element is a number:
+		-push to numbers stack
+	-if the current element is an operator:
+		-if operators stack empty -> push the current to the stack
+		-peek the last element in operators stack
+		-if current is higher or equal in presedence than the last element:
+			-push the current to operators stack
+		-else:
+			-pop the last element
+			-push the current
+			-push the last element
+
+3.get the data back and apply the operations:
+-while numbers stack size > 1 do:
+	-pop 2 element from numbers stack
+	-pop 1 element from operator stack
+	-apply operation on these 2 numbers
+	-push the result to the numbers stack
+-return numbers.pop the last element

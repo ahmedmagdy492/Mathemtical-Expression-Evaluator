@@ -23,7 +23,7 @@ class NumberExtractorTest {
         stack.push('b');
 
         NumberExtractor numberExtractor = new NumberExtractor();
-        String result = numberExtractor.popStack(stack);
+        String result = new Utility().popStack(stack);
 
         assertEquals("baaa", result);
     }
@@ -33,7 +33,7 @@ class NumberExtractorTest {
         String str = "ahmed";
 
         NumberExtractor numberExtractor = new NumberExtractor();
-        String result = numberExtractor.reverseString(str);
+        String result = new Utility().reverseString(str);
 
         assertEquals("demha", result);
     }

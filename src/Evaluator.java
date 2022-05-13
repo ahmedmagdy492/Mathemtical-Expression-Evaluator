@@ -35,8 +35,8 @@ public class Evaluator {
 
         // evaluate the 2 stacks
         while(nums.size() > 1) {
-            float fnum = nums.pop();
             float snum = nums.pop();
+            float fnum = nums.pop();
             char operator = operators.pop();
             nums.push(applyOperation(fnum, snum, operator));
         }
